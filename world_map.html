@@ -16,7 +16,168 @@
     <script src="http://barretozone.github.com/js/IE8.js" type="text/javascript"></script><![endif]-->
     <!--[if lt IE 7]>
     <link rel="stylesheet" type="text/css" media="all" href="http://barretozone.github.com/css/ie6.css"/><![endif]-->
-      </head>
+    <link href="http://barretozone.github.com/theme/css/gmaps.css" rel="stylesheet" type="text/css" />
+<script src="http://barretozone.github.com/theme/js/data.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var mapMenuOpen = true;
+
+  //var shadow = new google.maps.MarkerImage('/static/images/test/marker-images/shadow.png', new google.maps.Size(87, 50), new google.maps.Point(0, 0), new google.maps.Point(30, 50));
+
+  function mapMenuClose() {
+    if (!mapMenuOpen) {
+      $('#haritaPopUp').css('display', 'none');
+      mapMenuOpen = true;
+    }
+  }
+
+  $(function() {
+
+    // map initialisation
+    $('#gMapsDiv').gmap3({
+      map : {
+        options : {
+          center : [31.0, 7.0],
+          zoom : 2,
+          mapTypeId : google.maps.MapTypeId.TERRAIN,
+          panControl : true,
+          overviewMapControl : false,
+          mapTypeControl : false,
+          scaleControl : false,
+          streetViewControl : false,
+          zoomControl : true,
+          maxZoom : 16,
+          minZoom : 2
+        }
+      }
+    });
+
+    $('#gMapsDiv').gmap3({
+      marker : {
+        values : list, // from js/data.js
+
+        // single marker options
+        options : {
+          draggable : false//,
+          //shadow : shadow
+        },
+        // single marker events
+        events : {
+          click : function(marker, event, context) {
+            mapMenuOpen = true;
+            var map = $(this).gmap3('get');
+            var scale = Math.pow(2, map.getZoom());
+            var nw = new google.maps.LatLng(map.getBounds().getNorthEast().lat(), map.getBounds().getSouthWest().lng());
+            var worldCoordinateNW = map.getProjection().fromLatLngToPoint(nw);
+            var worldCoordinate = map.getProjection().fromLatLngToPoint(marker.getPosition());
+            var pixelOffset = new google.maps.Point(Math.floor((worldCoordinate.x - worldCoordinateNW.x) * scale), Math.floor((worldCoordinate.y - worldCoordinateNW.y) * scale));
+            var mapposition = $("#gMapsDiv").position();
+
+            if (context.data.type != "merkez") {
+              //var icerik = "<div class='left'><div class='magazaadi' id='magazaadi'> " + context.data.adi + "</div><div class='magazaadres' id='magazaadres'> " + context.data.adres + "</div><div class='magazabilgi' id='magazabilgi'>" + context.data.bilgi + "</div></div><div class='right'><div class='urunlogo' onClick='CreatePresentation(" + context.data.brosurID + ",1,2);'> <img id='magazabrosur' src='" + context.data.brosur + "' width='100' height='141'></div></div>";
+              var icerik = "<div class='left'><div class='magazaadi' id='magazaadi'> " + context.data.adi + "</div><div class='magazaadres' id='magazaadres'> " + context.data.adres + "</div><div class='magazabilgi' id='magazabilgi'>" + context.data.bilgi + "</div></div><div class='right'><div class='urunlogo' onClick='window.open(\"" + context.data.brosurID + "\");'> <img id='magazabrosur' src='" + context.data.brosur + "' width='100' height='141'></div></div>";
+
+              $(".accordion").html(icerik);
+
+              magazalogopath = "logo/";
+              magazabrosurpath = "";
+
+              $("#haritaPopUp").css('display', 'block');
+              $("#haritaPopUp").css('left', (pixelOffset.x + mapposition.left + 5 + 'px'));
+              $("#haritaPopUp").css('top', (pixelOffset.y + mapposition.top - 50 + 'px'));
+
+            }
+          },
+          mouseout : function() {
+            mapMenuOpen = false;
+            var t = setTimeout("mapMenuClose()", 500)
+          }
+        },
+
+        // cluster definition
+        cluster : {
+          radius : 10,
+
+          // This style will be used for clusters with more than 0 markers
+          0 : {
+            content : '<div class="cluster cluster-1">CLUSTER_COUNT</div>',
+            width : 50,
+            height : 50
+          },
+          // This style will be used for clusters with more than 6 markers
+          6 : {
+            content : '<div class="cluster cluster-2">CLUSTER_COUNT</div>',
+            width : 70,
+            height : 70
+          },
+          // This style will be used for clusters with more than 7 markers
+          7 : {
+            content : '<div class="cluster cluster-3">CLUSTER_COUNT</div>',
+            width : 90,
+            height : 90
+          },
+          events : {
+            mouseover : function(cluster, event, context) {
+              var icerik = "";
+              magazalogopath = "logo/";
+              magazabrosurpath = "";
+
+              // If more than 7 markers, don't display the panel
+              if (context.data.markers.length > 7) {
+                return;
+              }
+              for ( i = 0; i < context.data.markers.length; i++) {
+                //icerik += "<div class='accordionButton'>" + context.data.markers[i].data.adi + "</div><div class='accordionContent'><div class='left'><div class='magazaadres' id='magazaadres'> " + context.data.markers[i].data.adres + "</div><div class='magazabilgi' id='magazabilgi'>" + context.data.markers[i].data.bilgi + "</div></div><div class='right'><div class='urunlogo' onClick='CreatePresentation(" + context.data.markers[i].data.brosurID + ",1,2);'> <img id='magazabrosur' src='" + context.data.markers[i].data.brosur + "' width='100' height='141'></div></div></div>";
+                icerik += "<div class='accordionButton'>" + context.data.markers[i].data.adi + "</div><div class='accordionContent'><div class='left'><div class='magazaadres' id='magazaadres'> " + context.data.markers[i].data.adres + "</div><div class='magazabilgi' id='magazabilgi'>" + context.data.markers[i].data.bilgi + "</div></div><div class='right'><div class='urunlogo'> <img id='magazabrosur' src='" + context.data.markers[i].data.brosur + "' width='100' height='141'></div></div></div>";
+              }
+
+              $(".accordion").html(icerik);
+              $("#haritaPopUp").css('display', 'block');
+              $("#haritaPopUp").css('left', ($(cluster.main.getDOMElement()).offset().left - 120 + ($(cluster.main.getDOMElement()).width() / 2) + 'px'));
+              $("#haritaPopUp").css('top', ($(cluster.main.getDOMElement()).offset().top - 220 + ($(cluster.main.getDOMElement()).height() / 2) + 'px'));
+
+              $(cluster.main.getDOMElement()).css('border', '0px solid #FF0000');
+
+              $('.accordionButton').click(function() {
+                $('.accordionButton').removeClass('on');
+                $('.accordionContent').slideUp('normal');
+                if ($(this).next().is(':hidden')) {
+                  $(this).addClass('on');
+                  $(this).next().slideDown('normal');
+                }
+              });
+
+              $('.accordionContent').hide();
+            },
+            mouseout : function(cluster, event) {
+              mapMenuOpen = false;
+              var t = setTimeout("mapMenuClose()", 500)
+            },
+            click : function(cluster, event, context) {
+              var map = $(this).gmap3('get');
+              mapMenuOpen = false;
+              var t = setTimeout("mapMenuClose()", 100)
+              map.setCenter(context.data.latLng);
+              map.setZoom(map.getZoom() + 1);
+            }
+          }
+        }
+      }
+    });
+
+    $("#haritaPopUp").mouseover(function() {
+      mapMenuOpen = true;
+      $("#haritaPopUp").css('display', 'block');
+    });
+
+    $("#haritaPopUp").mouseout(function() {
+      $('#haritaPopUp').css('display', 'none');
+    });
+
+  });
+  // end of $(function(){
+
+</script>
+  </head>
   <body id="top">
     
     <div class="wrapper col1">
@@ -68,59 +229,19 @@
       </div>
     </div>
 
-    <div class="wrapper col3">
-  <div id="latest">
-    <ul>
-      <li>
-        <div>
-          <a href="#"><img src="http://barretozone.github.com/theme/images/demo/300x250.gif" alt="" /></a>
-        </div>
-        <p>
-          <a href="#">Indonectetus facilis leo nibh</a>
-        </p>
-        <p>
-          Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.
-        </p>
-      </li>
-      <li>
-        <div>
-          <a href="#"><img src="http://barretozone.github.com/theme/images/demo/300x250.gif" alt="" /></a>
-        </div>
-        <p>
-          <a href="#">Indonectetus facilis leo nibh</a>
-        </p>
-        <p>
-          Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.
-        </p>
-      </li>
-      <li class="last">
-        <div>
-          <a href="#"><img src="http://barretozone.github.com/theme/images/demo/300x250.gif" alt="" /></a>
-        </div>
-        <p>
-          <a href="#">Indonectetus facilis leo nibh</a>
-        </p>
-        <p>
-          Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna.
-        </p>
-      </li>
-    </ul>
-    <div class="clear"></div>
-  </div>
-</div>
-
+        
     <div class="wrapper col4">
       <div id="topnav">
         <nav>
           <ul>
                         <li>
-              <a  class="active" href="/index.html">Home</a>
+              <a  href="/index.html">Home</a>
             </li>
                         <li>
               <a  href="/categories.html">Blog</a>
             </li>
                         <li>
-              <a  href="/world_map.html">WorldMap</a>
+              <a  class="active" href="/world_map.html">WorldMap</a>
             </li>
                                                 <li>
               <a href="http://barretozone.github.com/pages/about.html">About</a>
@@ -147,94 +268,40 @@
     </div>
     <div class="wrapper col5">
 
-      <div id="homecontent-top">
-  <div id="homecontent-movie">
-    <iframe width="528" height="285" src="http://www.youtube.com/embed/ywWBy6J5gz8" frameborder="0" allowfullscreen></iframe>
-  </div>
-  <div id="homecontent-topleft">
-    <h2 class="title">Latest News &amp; Information</h2>
+      
+<div id="container">
 
-            <aside id="featured" class="body">
-      <article>
-        <h1 class="entry-title"><a href="http://barretozone.github.com/my-post4.html">Titulo post4</a></h1>
-        <p>
-          <a href="#"><img src="http://barretozone.github.com/theme/images/demo/80x80.gif" alt="" /></a>
-          Feugiatrutrum rhoncus semper enim massa eu intesque ipsum velit orci dolorem. Atnatis dolor tincidunt nulla elit auctortis laculisi elit fauctortor natis loreet.
-        </p>
-        <p>
-          <p>tags: <a href="http://barretozone.github.com/tag/awesome.html">awesome</a></p>                    
-        </p>
-        <p class="more last">
-          <a href="http://barretozone.github.com/category/simon.html">&lt; simon &gt;</a>  &#124; <a href="http://barretozone.github.com/my-post4.html">Read More &raquo;</a>
-        </p>
-      </article>
-    </aside>
-        <aside id="featured" class="body">
-      <article>
-        <h1 class="entry-title"><a href="http://barretozone.github.com/a-markdown-powered-article.html">A markdown powered article</a></h1>
-        <p>
-          <a href="#"><img src="http://barretozone.github.com/theme/images/demo/80x80.gif" alt="" /></a>
-          Feugiatrutrum rhoncus semper enim ma
-        </p>
-        <p>
-                              
-        </p>
-        <p class="more last">
-          <a href="http://barretozone.github.com/category/misc.html">&lt; misc &gt;</a>  &#124; <a href="http://barretozone.github.com/a-markdown-powered-article.html">Read More &raquo;</a>
-        </p>
-      </article>
-    </aside>
-        
+  <div id="haritaPopUp">
+    <div class="arrow"></div>
+    <div class="haritaWrapper">
+      <div class="top"></div>
+      <div class="content">
+        <div class="container">
+          <div class="accordion"></div>
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="clear"></div>
+  <div id="haritaMain">
+    <div id="gMapsDiv" class="gMapsDiv"></div>
+  </div>
+
+  <table style="width:194px;">
+    <tr>
+      <td align="center" style="height:194px;background:url(https://picasaweb.google.com/s/c/transparent_album_background.gif) no-repeat left"><a href="https://picasaweb.google.com/115519843718865582152/MexicoCholula?authuser=0&feat=embedwebsite"> <img src="https://lh5.googleusercontent.com/-B6DUZ0jhXv8/UD5WshJdfZE/AAAAAAAAgSQ/2BXaWTZqJ3A/s160-c/MexicoCholula.jpg" width="160" height="160" style="margin:1px 0 0 4px;"> </a></td>
+    </tr>
+    <tr>
+      <td style="text-align:center;font-family:arial,sans-serif;font-size:11px"><a href="https://picasaweb.google.com/115519843718865582152/MexicoCholula?authuser=0&feat=embedwebsite" style="color:#4D4D4D;font-weight:bold;text-decoration:none;">Mexico - Cholula</a></td>
+    </tr>
+  </table>
+  
+
 </div>
+
 
     </div>
 
-    <div class="wrapper col6">
-  <div id="homecontent">
-    <ul>
-      <li>
-        <p class="imgholder">
-          <a href="#"><img src="http://barretozone.github.com/theme/images/demo/290x100.gif" alt="" /></a>
-        </p>
-        <h2>About This Template</h2>
-        <p>
-          This is a W3C standards compliant free website template from <a href="http://www.os-templates.com/">OS Templates</a>. Urnaultrices quis curabitur phasellentesque congue magnis vestibulum quismodo nulla et feugiat. Adipisciniapellentum leo ut consequam ris felit elit id nibh sociis malesuada.
-        </p>
-        <p class="readmore">
-          <a href="#">Read More &raquo;</a>
-        </p>
-      </li>
-      <li>
-        <p class="imgholder">
-          <a href="#"><img src="http://barretozone.github.com/theme/images/demo/290x100.gif" alt="" /></a>
-        </p>
-        <h2>Template Terms of Use</h2>
-        <p>
-          This template is distributed using a <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>, which allows you to use and modify the template for both personal and commercial use when you keep the provided credit links in the footer. Leo ut consequam ris felit elit id nibh sociis malesuada.
-        </p>
-        <p class="readmore">
-          <a href="#">Read More &raquo;</a>
-        </p>
-      </li>
-      <li class="last">
-        <p class="imgholder">
-          <a href="#"><img src="http://barretozone.github.com/theme/images/demo/290x100.gif" alt="" /></a>
-        </p>
-        <h2>Indonectetus facilis leo nibh</h2>
-        <p>
-          Nullamlacus dui ipsum conseque loborttis non euisque morbi penas dapibulum orna. Urnaultrices quis curabitur phasellentesque congue magnis vestibulum quismodo nulla et feugiat. Adipisciniapellentum leo ut consequam ris felit elit id nibh sociis malesuada.
-        </p>
-        <p class="readmore">
-          <a href="#">Read More &raquo;</a>
-        </p>
-      </li>
-    </ul>
-    <div class="clear"></div>
-  </div>
-</div>
-    <div class="wrapper col7">
+            <div class="wrapper col7">
       <div id="footer">
         <div class="footbox">
           <h2>Site Sponsors</h2>
