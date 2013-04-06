@@ -1,6 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>BarretoZone</title><link href="http://barretozone.github.com/" rel="alternate"></link><link href="http://barretozone.github.com/feeds/all-en.atom.xml" rel="self"></link><id>http://barretozone.github.com/</id><updated>2013-02-25T10:00:00+01:00</updated><entry><title>Marseille 2013</title><link href="http://barretozone.github.com/my-trip1.html" rel="alternate"></link><updated>2013-02-25T10:00:00+01:00</updated><author><name>Yo mero</name></author><id>tag:barretozone.github.com,2013-02-25:my-trip1.html</id><summary type="html">&lt;p&gt;Que pedo , esta madra a ver como jala
-This is the content of my super blog post.&lt;/p&gt;</summary><category term="France"></category><category term="trips"></category></entry><entry><title>Titulo post4</title><link href="http://barretozone.github.com/my-post4.html" rel="alternate"></link><updated>2012-12-03T11:20:00+01:00</updated><author><name>Yo mero</name></author><id>tag:barretozone.github.com,2012-12-03:my-post4.html</id><summary type="html">&lt;p&gt;Que pedo , esta madra a ver como jala
+<feed xmlns="http://www.w3.org/2005/Atom"><title>TraveLog</title><link href="http://barretozone.github.com/" rel="alternate"></link><link href="http://barretozone.github.com/feeds/all-en.atom.xml" rel="self"></link><id>http://barretozone.github.com/</id><updated>2013-03-29T10:00:00+01:00</updated><entry><title>Holanda</title><link href="http://barretozone.github.com/holand.html" rel="alternate"></link><updated>2013-03-29T10:00:00+01:00</updated><author><name>Oscar Barreto</name></author><id>tag:barretozone.github.com,2013-03-29:holand.html</id><summary type="html">&lt;p&gt;A pesar de ser un pequeño pais de tan solo 16 millones de habitantes y 40 mil km², Holanda esta llena de contrastes y muchos lugares por descubrir, tanto es asi, que recive cerca 10 millones de visitantes al año.&lt;/p&gt;
+&lt;p&gt;Holanda es famosa por sus sabrosos quesos, bonitos molinos, coloridos tulipanes, extraños zapatos de madera, pintorescos canales, buena musica electronica, y sus relajadas ideas liberales.&lt;/p&gt;
+&lt;p&gt;&lt;img class="imgr" src="https://lh6.googleusercontent.com/-GWcpwbrcR9I/ThxGjOzL4lI/AAAAAAAATfM/lZexVsh9iUU/s732/DSCN5543.JPG" alt="" width="405" height="304" /&gt;&lt;/p&gt;
+&lt;h2&gt;Datos Curiosos&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Netherlands o Paises Bajos, se llama de esta forma debido a que más de un cuarto del pais se encuentra por debajo del nivel del mar. A su vez, el 50% de Holanda tiene solamente un metro por encima del nivel del mar. Por fortuna no suceden muchos tsunamis en esta region :D&lt;/li&gt;
+&lt;li&gt;Tulipanes Turcos. Si! los tulipanes provienen de Turquía, fueron importados a Holanda por primera vez en el siglo XVII por  Carolus Clusius, un biólogo francés, y usi es como comenzó la tulipmania.&lt;/li&gt;
+&lt;li&gt;Una bicicleta por habitante. En Holanda existen cerca de 16 millones de bicicletas, casi una por habitante.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Lugares Visitados&lt;/h2&gt;
+&lt;h3&gt;Rotterdam&lt;/h3&gt;
+&lt;p&gt;Puerto mas importante de Europa, y segundo al mundo ?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h5&gt;Euromast&lt;/h5&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A pesar de que la entrada es un tanto costosa (&lt;a href="http://www.euromast.nl/en/entrance"&gt;€9.25&lt;/a&gt;) es una buena forma de admirar el panorama de la ciudad, su puerto, y el famoso puente Erasmus. Tambien organizan rápel y tirolesa en algunas ocasiones.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;h5&gt;Museo de Ajadrez (&lt;a href="http://www.euwe.nl/schaakstukkenmuseum.htm"&gt;Schaakstukkenmuseum&lt;/a&gt;)&lt;/h5&gt;
+&lt;p&gt;Se trata de una muestra de ajedrezes de un colleccionista que por ha recabado por 20 años ajedrezes provenientes de todo el mundo. La entrada es de €4, un poco exagerada para el tamaño de la exposición, sin embargo el propietario es un tipo amigable que ofrece una bevida a sus visitantes y esta ahi para responder cualquier pregunta sobre su colección y provenienza de cada uno de sus ajedrezes. Curiosamente, tenía también un ajedrez exactamente igual a uno que me regalo mi abuelo. A mi me habian dicho que era de hueso, pero el propietario me explico que lo habia comprado en un negocio de antiguedades y que le habían explicado que venía de Sudamerica y que era hecho con la raíz de una planta americana que con el tiempo se hacia dura. (A mi parecer timaron al pobre coleccionista)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;h4&gt;Puerto y Puente Erasmus&lt;/h4&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Den Haag&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Modurodam&lt;/li&gt;
+&lt;li&gt;centro&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Amsterdam&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;museo del sexo&lt;/li&gt;
+&lt;li&gt;museo del diamante&lt;/li&gt;
+&lt;li&gt;mercado tulipanes&lt;/li&gt;
+&lt;li&gt;mercado de antiguedades&lt;/li&gt;
+&lt;li&gt;condomerie&lt;/li&gt;
+&lt;li&gt;bar al que fui con sergey&lt;/li&gt;
+&lt;li&gt;red light district&lt;/li&gt;
+&lt;li&gt;Coffee shop&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Haarlem&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;centro y mercado&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h4&gt;Volendam &amp;amp; Edam&lt;/h4&gt;
+&lt;p&gt;*&lt;/p&gt;
+&lt;h4&gt;isla de zapatos&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;Fabrica de Zapatos&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Lugares por Visitar&lt;/h2&gt;
+&lt;p&gt;hacer un tour en bici
+ ir en temporada de tulipanes&lt;/p&gt;
+&lt;h2&gt;Trip Log&lt;/h2&gt;
+&lt;p&gt;En total, he tenido la fortuna de visitar este pintoresco pais en 7 ocasiones.
+La primera en el 2007, con dos de mis hermanos, como parte de nuestro gran eurotrip.
+La segunda con una amiga de Mexico que vino a visitarme he hicimos un pequeño eurotrip en el 200?&lt;/p&gt;
+&lt;p&gt;La tercera vez fue un poco diferente, ya que fui con unos amigos para el Queensday.&lt;/p&gt;
+&lt;p&gt;Una vez mas con una amiga de la universidad en Italia&lt;/p&gt;
+&lt;p&gt;Despues en el 200? con mi mama, mi hermana y mi hermano menor&lt;/p&gt;
+&lt;p&gt;Despues para visitar amigos
+Y finalmente con mi novia y para visitar de nuevo unos amigos&lt;/p&gt;
+&lt;h3&gt;Things that shocked me&lt;/h3&gt;
+&lt;p&gt;cosas interesantes
+- casas que parecen vitrinas
+- zapatos comodos
+- segnaletica stradale per le bici
+- mundo de bicis, y gente va aun con el frio
+- baño enfrente de la iglesia
+- gente semplice, amigable, extrovertida&lt;/p&gt;
+&lt;h2&gt;comida tipica&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;obleas&lt;/li&gt;
+&lt;li&gt;quesos, pesto&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;bevidas tipicas&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;bar al que fui con sergey&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;quando ir, queensday&lt;/h2&gt;
+&lt;h2&gt;donde dormir&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;flying pig hostel: divertimento asegurado, bar en el hostal&lt;/li&gt;
+&lt;/ul&gt;</summary><category term="Holland"></category><category term="trips"></category></entry><entry><title>St. Paul de Vence 2013</title><link href="http://barretozone.github.com/st-paul-de-vence-2013.html" rel="alternate"></link><updated>2013-03-01T10:00:00+01:00</updated><author><name>Oscar Barreto</name></author><id>tag:barretozone.github.com,2013-03-01:st-paul-de-vence-2013.html</id><summary type="html">&lt;p&gt;Que pedo , esta madra a ver como jala
+This is the content of my super blog post.&lt;/p&gt;</summary><category term="France"></category><category term="trips"></category></entry><entry><title>Marseille 2013</title><link href="http://barretozone.github.com/my-trip1.html" rel="alternate"></link><updated>2013-02-25T10:00:00+01:00</updated><author><name>Yo mero</name></author><id>tag:barretozone.github.com,2013-02-25:my-trip1.html</id><summary type="html">&lt;p&gt;Que pedo , esta madra a ver como jala
+This is the content of my super blog post.&lt;/p&gt;
+&lt;p&gt;&lt;img alt="Marseille" src="/theme/images/thumbs/marseille.JPG" /&gt;&lt;/p&gt;</summary><category term="France"></category><category term="trips"></category></entry><entry><title>Titulo post4</title><link href="http://barretozone.github.com/my-post4.html" rel="alternate"></link><updated>2012-12-03T11:20:00+01:00</updated><author><name>Yo mero</name></author><id>tag:barretozone.github.com,2012-12-03:my-post4.html</id><summary type="html">&lt;p&gt;Que pedo , esta madra a ver como jala
 This is the content of my super blog post.&lt;/p&gt;</summary><category term="awesome"></category></entry><entry><title>Titulo post2</title><link href="http://barretozone.github.com/my-post2.html" rel="alternate"></link><updated>2012-10-03T11:20:00+02:00</updated><author><name>Yo mero</name></author><id>tag:barretozone.github.com,2012-10-03:my-post2.html</id><summary type="html">&lt;p&gt;Que pedo , esta madra a ver como jala
 This is the content of my super blog post.&lt;/p&gt;</summary><category term="weird"></category></entry><entry><title>Titulo post3</title><link href="http://barretozone.github.com/my-post3.html" rel="alternate"></link><updated>2010-12-03T11:20:00+01:00</updated><author><name>Yo mero</name></author><id>tag:barretozone.github.com,2010-12-03:my-post3.html</id><summary type="html">&lt;p&gt;Que pedo , esta madra a ver como jala
 This is the content of my super blog post.&lt;/p&gt;</summary><category term="awesome"></category></entry><entry><title>Title Super post 1</title><link href="http://barretozone.github.com/my-super-post-slug.html" rel="alternate"></link><updated>2010-12-03T10:20:00+01:00</updated><author><name>Oscar Barreto</name></author><id>tag:barretozone.github.com,2010-12-03:my-super-post-slug.html</id><summary type="html">&lt;p&gt;This is the content of my super blog post.

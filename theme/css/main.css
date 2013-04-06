@@ -174,10 +174,34 @@ div.wrapper{
 	padding:15px 0;
 	}
 	
-#container h1, #container h2, #container h3, #container h4, #container h5, #container h6{
+#container h1{
 	font-family:Georgia, "Times New Roman", Times, serif;
 	font-weight:normal;
-	font-size:22px;
+	font-size:26px;
+	margin:0 0 10px 0;
+	padding:0;
+	}
+
+#container h2{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-weight:normal;
+	font-size:24px;
+	margin:0 0 10px 0;
+	padding:0;
+	}
+
+#container h3{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-weight:normal;
+	font-size:20px;
+	margin:0 0 10px 0;
+	padding:0;
+	}
+
+#container h4, #container h5, #container h6{
+	font-family:Georgia, "Times New Roman", Times, serif;
+	font-weight:normal;
+	font-size:16px;
 	margin:0 0 10px 0;
 	padding:0;
 	}
